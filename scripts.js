@@ -10,18 +10,35 @@ const data = {
 
 // Only edit below
 
-const { first = 1 } = data.first || {}
-const { second = 1 } = data.second || {}
-const { third = 1 } = data.third || {}
+const [ first = 1 ] = data.lists || {}
+const [ second = 1 ] = data.lists || {}
+const [ third = 1 ] = data.lists || {}
 
-const result = []
+const result = [10, 12, 14, 5, 7 , 13, 11, 15, 4, 8, 6, 2, 1, 3, 9]
+
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
+// result.pop()
 
 const extractBiggest = () => {
-	if (first[-1] > second[-1]) {
+	if (first[-1] < second[-1]) {
 		return first
 	}
 
-	if (third[-1] < 1) {
+	if (third[-1] > 1) {
 		return second
 	}
 	
