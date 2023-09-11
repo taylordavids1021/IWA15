@@ -10,23 +10,29 @@ const data = {
 
 // Only edit below
 
-const [ first = 1 ] = data.lists || {}		// [] instead of {}
-const [ second = 1 ] = data.lists || {}
-const [ third = 1 ] = data.lists || {}
+const [hide_First, first] = data.lists[0];
+const [hide_Second, second] = data.lists[1];
+const [hide_Third, third] = data.lists[2];
 
 // create new var for new array with previous array data
-const result = [10, 12, 14, 5, 7 , 13, 11, 15, 4, 8, 6, 2, 1, 3, 9]
+// const result = [10, 12, 14, 5, 7 , 13, 11, 15, 4, 8, 6, 2, 1, 3, 9]
+
+const result = []
 
 const extractBiggest = () => {
-	if (first[-1] > second[-1]) {
-		return first
+	let first_Value = first[first.length -1]
+	let second_Value = second[second.length -1]
+	let third_Value = third[third.length -1]
+
+	const highest = Math.max(first_Value || 0,second_Value || 0,third_Value || 0)
+	if (first_Value == highest) {
+		return first.pop()
+	} else if (second_Value == highest) {
+		return second.pop()
+	} else {
+		return third.pop()
 	}
 
-	if (third[-1] < 1) {
-		return second
-	}
-	
-	return third
 }
 
 // Only edit above
